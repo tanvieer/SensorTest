@@ -26,7 +26,7 @@
         android:layout_below="@+id/SensorTitle2">
 
         <TextView
-            android:text="Value ="
+            android:text="Value = 1.0"
             android:layout_width="184dp"
             android:layout_height="wrap_content"
             android:id="@+id/value"
