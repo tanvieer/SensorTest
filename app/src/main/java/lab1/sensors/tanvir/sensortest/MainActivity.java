@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity{
 
     private Button Accelerometer;
     private Button Proximity;
+    private Button Light;
 
 
     @Override
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         Accelerometer= (Button) findViewById(R.id.button1);
         Proximity = (Button) findViewById(R.id.button2);
+        Light = (Button) findViewById(R.id.button3);
     }
 
     protected void onResume(){
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(new Intent(MainActivity.this, ProximitySensor.class));
             }
         });
+
+        Light.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LightSensor.class));
+            }
+        });
+
     }
 
 }

@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProximitySensor" />
-        <activity android:name=".Accelerometer"></activity>
+        <activity android:name=".Accelerometer" />
+        <activity android:name=".LightSensor"></activity>
     </application>
 
 </manifest>

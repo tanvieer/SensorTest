@@ -36,9 +36,7 @@ public class ProximitySensor extends AppCompatActivity implements SensorEventLis
 
     }
 
-    public void onBack(View v){
-        startActivity(new Intent(this, MainActivity.class));
-    }
+
 
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -49,6 +47,10 @@ public class ProximitySensor extends AppCompatActivity implements SensorEventLis
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
+    }
+
+    public void onBack(View v){
+        startActivity(new Intent(this, MainActivity.class));
     }
     @Override
     protected void onStop() {
