@@ -57,14 +57,14 @@ public class Accelerometer extends AppCompatActivity implements SensorEventListe
 
 
     private void getAccelerometer(SensorEvent event){
-        Log.d("AccelerometerTest","Test1");
+        //Log.d("AccelerometerTest","Test1");
         float[] values = event.values;
 
         float x = values[0];
         float y = values[1];
         float z = values[2];
 
-        Log.d("AccelerometerTest","Test2");
+        //Log.d("AccelerometerTest","Test2");
         Log.d("testSensor","x= "+x+" ,y= "+y+" ,z= "+z);
 
         X.setText("X = "+Float.toString(x));
