@@ -1,5 +1,6 @@
 package lab1.sensors.tanvir.sensortest;
 
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -7,57 +8,45 @@ import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements SensorEventListener {
+public class MainActivity extends AppCompatActivity{
 
-    private TextView X,Y,Z;
-    private Sensor SN;
-    private SensorManager SM;
+    private Button Accelerometer;
+    private Button Proximity;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        X = (TextView)findViewById(R.id.textX);
-        Y = (TextView)findViewById(R.id.textY);
-        Z = (TextView)findViewById(R.id.textZ);
-        SM = (SensorManager)getSystemService(SENSOR_SERVICE);
-        SN = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        SM.registerListener(this,SN, SensorManager.SENSOR_DELAY_NORMAL);
-
+        Accelerometer= (Button) findViewById(R.id.button1);
+        Proximity = (Button) findViewById(R.id.button2);
     }
 
-    @Override
-    public void onSensorChanged(SensorEvent event)
-    {
-        getAccelerometer(event);
+    protected void onResume(){
+        super.onResume();
+
+
+
+        Accelerometer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(MainActivity.this, Accelerometer.class));
+            }
+        });
+
+
+        Proximity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProximitySensor.class));
+            }
+        });
     }
 
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        //Log.d("testSensor",accuracy.);
-    }
-
-   /* @Override
-    public void onCreate*/
-
-
-
-
-
-    private void getAccelerometer(SensorEvent event){
-        float[] values = event.values;
-
-        float x = values[0];
-        float y = values[1];
-        float z = values[2];
-
-        Log.d("testSensor","x= "+x+" ,y= "+y+" ,z= "+z);
-
-        X.setText(Float.toString(x));
-        Y.setText(Float.toString(y));
-        Z.setText(Float.toString(z));
-    }
 }

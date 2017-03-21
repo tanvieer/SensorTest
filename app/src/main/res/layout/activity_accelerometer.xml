@@ -19,32 +19,42 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true">
 
+        <TextView
+            android:text="Accelerator Meter:"
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/SensorTitleAM"
+            android:background="@android:color/holo_blue_dark"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:text="X ="
+            android:layout_width="139dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textX" />
+
+        <TextView
+            android:text="Y ="
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textY" />
+
+        <TextView
+            android:text="Z ="
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textZ" />
+
 
         <Button
-            android:text="Accelerometer"
+            android:text="Back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button1" />
-        <Button
-            android:text="Proximity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button2" />
-        <Button
-            android:text="Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button3" />
-        <Button
-            android:text="Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button4" />
-        <Button
-            android:text="Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button5" />
+            android:id="@+id/back"
+            android:onClick="onBack" />
+
+
+
     </LinearLayout>
 
 </RelativeLayout>
